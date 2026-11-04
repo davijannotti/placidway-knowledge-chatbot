@@ -1,0 +1,23 @@
+name: Availability check
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check frontend and API without spending LLM tokens
+        run: |
+          curl --fail --retry 2 --max-time 30 -sS https://davijannotti.github.io/placidway-knowledge-chatbot/ > /tmp/page.html
+          curl --fail --retry 2 --max-time 30 -sS https://placidway-knowledge-api.placidway-knowledge-chatbot.workers.dev/health > /tmp/health.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          assert 'PlacidWay Guide' in Path('/tmp/page.html').read_text()
+          data=json.loads(Path('/tmp/health.json').read_text())
+          assert data['ok'] and data['sharedKeyConfigured'] and len(data['sources']) == 7
+          print('Frontend, database and configured shared connection are available; no LLM request made.')
+          PY

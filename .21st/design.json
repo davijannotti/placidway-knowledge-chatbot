@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "project": {
+    "name": "PlacidWay Guide",
+    "productType": "Source-grounded medical travel information chatbot",
+    "stack": [
+      "Vite",
+      "TypeScript",
+      "Cloudflare Workers",
+      "D1"
+    ]
+  },
+  "sources": {
+    "tokens": [],
+    "components": [],
+    "assets": [],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "paper": "#fafbf8",
+      "sidebar": "#eff3ed",
+      "ink": "#233c38",
+      "teal": "#136060"
+    },
+    "typography": {
+      "display": "Georgia",
+      "body": "Arial"
+    },
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "comfortable"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [
+      "Citations remain discoverable",
+      "Privacy and quote consent visible",
+      "Accessible keyboard operation and mobile chat composer"
+    ],
+    "avoid": [
+      "Medical outcome promises",
+      "Implied official affiliation",
+      "Third-party tracking scripts"
+    ]
+  },
+  "decisions": [
+    "Calm editorial sidebar, serif heading, teal controls, flat source panels; native controls and dialogs."
+  ],
+  "evidence": [
+    "21st Agent Chat (12403): message list/composer and empty-state inspiration only; no code retrieved."
+  ],
+  "generatedAt": "2026-11-04T15:56:41.214Z"
+}

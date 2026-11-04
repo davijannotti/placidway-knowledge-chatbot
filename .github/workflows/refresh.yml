@@ -1,0 +1,39 @@
+name: Refresh supplied pages
+on:
+  schedule:
+    - cron: '37 7 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: content-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Fetch exact allowlist, validate extraction and replace snapshot atomically
+        run: npm run ingest
+      - run: npm test
+      - name: Commit only a complete validated snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add knowledge.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh the seven supplied PlacidWay pages"
+            git push
+            gh workflow run checks.yml --ref main
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -1,0 +1,111 @@
+{
+  "testedAt": "2026-11-04T16:20:30.963Z",
+  "version": "2767057c95efcc64",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "results": [
+    {
+      "name": "1. Cost",
+      "question": "How much does alternative adenocarcinoma cancer treatment in Tijuana, Mexico cost?",
+      "status": "answered",
+      "pass": true,
+      "answer": "The Out‑Patient program for alternative adenocarcinoma cancer treatment in Tijuana, Mexico costs $18,995 USD for a three‑week duration.\n\nThe In‑Patient program for the same treatment in Tijuana, Mexico costs $30,000 USD for a three‑week duration.",
+      "citations": [
+        {
+          "id": "2-637c48f202de",
+          "title": "Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
+          "heading": "Cost of Adenocarcinoma Cancer Treatment in Tijuana, Mexico",
+          "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
+          "quote": "Out-Patient Program | 3 Weeks | $18,995"
+        },
+        {
+          "id": "2-637c48f202de",
+          "title": "Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
+          "heading": "Cost of Adenocarcinoma Cancer Treatment in Tijuana, Mexico",
+          "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
+          "quote": "In-Patient Program | 3 Weeks | $30,000"
+        }
+      ],
+      "tokens": 2651,
+      "latencyMs": 3273,
+      "retrieved": [
+        "2-637c48f202de",
+        "2-5fef1284c15e",
+        "2-3168c751d81f",
+        "2-e39a8d047d1f",
+        "2-48320e3f9b13",
+        "2-889d4bca5a16",
+        "7-77d1a74b46e2"
+      ],
+      "resolvedQuery": "alternative adenocarcinoma cancer treatment Tijuana Mexico cost price out-patient program"
+    },
+    {
+      "name": "2. Comparison",
+      "question": "Is the ITC alternative adenocarcinoma cancer package cheaper in Mexico or Turkey?",
+      "status": "unknown",
+      "pass": true,
+      "answer": "I couldn't find that information in the seven supplied PlacidWay pages. Please contact PlacidWay for a free, personalized quote.",
+      "citations": [],
+      "tokens": 2644,
+      "latencyMs": 1098,
+      "retrieved": [
+        "2-3168c751d81f",
+        "2-e39a8d047d1f",
+        "2-889d4bca5a16",
+        "2-637c48f202de",
+        "2-52f7d9bd51aa",
+        "6-27659a71a542",
+        "7-77d1a74b46e2"
+      ],
+      "resolvedQuery": "ITC alternative adenocarcinoma cancer package Mexico Turkey price comparison"
+    },
+    {
+      "name": "3. Procedure / inclusions",
+      "question": "What is included in the out-patient adenocarcinoma cancer treatment package at ITC?",
+      "status": "answered",
+      "pass": true,
+      "answer": "The out‑patient program includes daily visits without overnight stay, weekly comprehensive lab work (CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels, specific tumor markers, and urinalysis), one prescribed imaging study (X‑ray, ultrasound, or CT scan), all core alternative therapies listed for the 3‑week program, two health‑focused meals per day during treatment hours, standard medications discussed upon admission, and one post‑discharge consultation after 3 months.",
+      "citations": [
+        {
+          "id": "2-48320e3f9b13",
+          "title": "Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
+          "heading": "Included in the Out-Patient Program ($18,995 USD)",
+          "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
+          "quote": "The Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months."
+        }
+      ],
+      "tokens": 2926,
+      "latencyMs": 1809,
+      "retrieved": [
+        "2-5fef1284c15e",
+        "2-3168c751d81f",
+        "2-637c48f202de",
+        "2-e39a8d047d1f",
+        "2-48320e3f9b13",
+        "2-889d4bca5a16",
+        "6-27659a71a542"
+      ],
+      "resolvedQuery": "adenocarcinoma cancer out-patient treatment package ITC Tijuana Mexico inclusion details"
+    },
+    {
+      "name": "4. Follow-up",
+      "question": "And what about recovery time?",
+      "status": "unknown",
+      "pass": true,
+      "answer": "I couldn't find that information in the seven supplied PlacidWay pages. Please contact PlacidWay for a free, personalized quote.",
+      "citations": [],
+      "tokens": 2768,
+      "latencyMs": 1218,
+      "retrieved": [
+        "2-5fef1284c15e",
+        "2-52f7d9bd51aa",
+        "2-3168c751d81f",
+        "2-637c48f202de",
+        "2-e39a8d047d1f",
+        "2-31f6fdcd691e",
+        "2-48320e3f9b13"
+      ],
+      "resolvedQuery": "ITC Tijuana adenocarcinoma out-patient recovery time"
+    }
+  ]
+}

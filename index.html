@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore ITC packages and prices with answers grounded in seven supplied PlacidWay pages."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://*.workers.dev http://127.0.0.1:8787 http://localhost:8787; base-uri 'self'; form-action 'self'; object-src 'none'"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23136060'/%3E%3Cpath d='M20 10v20M10 20h20' stroke='white' stroke-width='4'/%3E%3C/svg%3E"
+    />
+    <title>PlacidWay Guide · Website knowledge assistant</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="About this guide">
+        <a class="brand" href="./" aria-label="PlacidWay Guide home"
+          ><span class="brand-mark" aria-hidden="true">p<span>+</span></span
+          ><span
+            >PlacidWay<span class="brand-sub">KNOWLEDGE GUIDE</span></span
+          ></a
+        >
+        <div class="sidebar-intro">
+          <span class="eyebrow">A little clarity goes a long way.</span>
+          <h2>Know your options.<br />Find your next step.</h2>
+          <p>
+            A focused guide to ITC’s listed treatments, packages and prices in
+            Tijuana, Mexico.
+          </p>
+        </div>
+        <div class="scope">
+          <span class="scope-icon" aria-hidden="true">↗</span>
+          <div>
+            <strong>Seven pages. Clear sources.</strong>
+            <p>
+              Answers come from the supplied PlacidWay pages, with links you can
+              check.
+            </p>
+          </div>
+        </div>
+        <button class="source-toggle text-button" id="sources-open">
+          Explore the knowledge base <span aria-hidden="true">→</span>
+        </button>
+        <div class="sidebar-bottom">
+          <span class="pill">ASSESSMENT DEMONSTRATION</span>
+          <p>
+            Independent prototype by Davi Jannotti.<br />Not an official
+            PlacidWay service.
+          </p>
+          <button class="text-button muted" id="privacy-open">
+            Privacy & data use ↗
+          </button>
+        </div>
+      </aside>
+      <main>
+        <header class="topbar">
+          <div class="guide-label">
+            <span class="status-dot" aria-hidden="true"></span>Website knowledge
+            assistant
+          </div>
+          <div class="header-actions">
+            <button class="button subtle" id="reset">New chat</button
+            ><button class="button subtle" id="settings-open">
+              API settings <span aria-hidden="true">⚙</span>
+            </button>
+          </div>
+        </header>
+        <div class="conversation">
+          <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+            <span class="eyebrow">YOUR QUESTIONS, WITH SOURCES</span>
+            <h1 id="welcome-title">
+              Make an informed<br /><em>next move.</em>
+            </h1>
+            <p>
+              Ask about ITC’s packages, what’s included, or listed costs.<br
+                class="desktop-break"
+              />
+              I’ll find the details and show you where they came from.
+            </p>
+            <div class="starters">
+              <button
+                data-question="How much does the adenocarcinoma cancer treatment package in Tijuana cost?"
+              >
+                Understand the costs <span>↗</span
+                ><small>Prices, currencies & conditions</small></button
+              ><button
+                data-question="What is included in the out-patient adenocarcinoma cancer treatment package?"
+              >
+                Look inside a package <span>↗</span
+                ><small>What’s included & what’s extra</small></button
+              ><button
+                data-question="What travel support does ITC offer international patients?"
+              >
+                Plan the practical details <span>↗</span
+                ><small>Travel & international patient support</small>
+              </button>
+            </div>
+            <p class="language-note">
+              English · Português · Español · العربية<br /><span
+                >Ask in your language. The source pages are in English.</span
+              >
+            </p>
+          </section>
+          <section
+            id="messages"
+            class="message-list"
+            aria-label="Conversation"
+            aria-live="polite"
+            aria-relevant="additions"
+          ></section>
+          <p id="loading" role="status" hidden>
+            Checking the supplied pages<span class="loading-dots">…</span>
+          </p>
+        </div>
+        <div class="composer-wrap">
+          <div id="service-status" class="service-status" role="status">
+            Connecting to the guide…
+          </div>
+          <form id="chat-form" class="composer">
+            <label class="sr-only" for="question">Your question</label
+            ><textarea
+              id="question"
+              placeholder="Ask a question about treatments, packages or prices…"
+              rows="2"
+              maxlength="1600"
+              required
+            ></textarea>
+            <div class="composer-bottom">
+              <span>Grounded in PlacidWay’s supplied pages</span
+              ><button
+                class="send"
+                id="send"
+                type="submit"
+                aria-label="Send question"
+              >
+                ↑
+              </button>
+            </div>
+          </form>
+          <div class="composer-footer">
+            <span
+              >Information only. For medical advice, speak to your doctor.</span
+            ><button class="text-button" id="quote-open">
+              Request a quote ↗
+            </button>
+          </div>
+          <div class="mobile-tools">
+            <button class="text-button" id="mobile-sources-open">
+              Seven source pages ↗</button
+            ><button class="text-button" id="mobile-privacy-open">
+              Privacy & data use ↗
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <dialog id="sources-dialog">
+      <div class="dialog-head">
+        <h2>The knowledge base</h2>
+        <button class="close" data-close aria-label="Close knowledge base">
+          ×
+        </button>
+      </div>
+      <p class="dialog-description">
+        Only these seven supplied pages are used. Linked pages and video
+        transcripts are not fetched.
+      </p>
+      <p class="updated" id="updated"></p>
+      <ol id="source-list" class="source-list"></ol>
+    </dialog>
+    <dialog id="settings-dialog">
+      <div class="dialog-head">
+        <h2>Your API connection</h2>
+        <button class="close" data-close aria-label="Close API settings">
+          ×
+        </button>
+      </div>
+      <p class="dialog-description">
+        Use the shared Groq connection, or bring your own key. Your key stays in
+        this tab’s memory and passes through this demo’s backend over HTTPS for
+        each request. It is never saved in the database or browser storage.
+      </p>
+      <form id="settings-form">
+        <label for="provider">Provider</label
+        ><select id="provider">
+          <option value="groq">Groq</option>
+          <option value="openrouter">
+            OpenRouter · own key required
+          </option></select
+        ><label for="api-key"
+          >Your API key
+          <span class="muted">(optional for shared Groq)</span></label
+        ><input
+          id="api-key"
+          type="password"
+          autocomplete="off"
+          spellcheck="false"
+          maxlength="512"
+          placeholder="Leave empty to use the shared connection"
+        /><label for="model"
+          >Model <span class="muted">(only with your own key)</span></label
+        ><input
+          id="model"
+          value="openai/gpt-oss-120b"
+          maxlength="120"
+          spellcheck="false"
+        />
+        <p class="fine-print">
+          OpenRouter requires a model/provider supporting structured outputs and
+          may charge your account. This demo never switches providers
+          automatically.
+        </p>
+        <div class="form-actions">
+          <button type="button" class="button subtle" id="clear-key">
+            Clear key</button
+          ><button class="button primary" type="submit">Use connection</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="quote-dialog">
+      <div class="dialog-head">
+        <h2>A clearer next step.</h2>
+        <button class="close" data-close aria-label="Close quote form">
+          ×
+        </button>
+      </div>
+      <p class="dialog-description">
+        Register your interest in this assessment demo.
+        <strong
+          >This does not send a request to PlacidWay or book an
+          appointment.</strong
+        >
+        For a real quote,
+        <a id="contact-link" target="_blank" rel="noopener noreferrer"
+          >contact PlacidWay through the clinic page</a
+        >.
+      </p>
+      <form id="lead-form">
+        <label for="lead-name">Name</label
+        ><input
+          id="lead-name"
+          name="name"
+          autocomplete="name"
+          minlength="2"
+          maxlength="100"
+          required
+        /><label for="lead-email">Email</label
+        ><input
+          id="lead-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          maxlength="254"
+          required
+        /><label for="lead-interest"
+          >Package of interest <span class="muted">(optional)</span></label
+        ><select id="lead-interest" name="interest">
+          <option value="">Not specified</option>
+          <option>Adenocarcinoma cancer package</option>
+          <option>Adrenal cancer package</option>
+          <option>Anal cancer package</option></select
+        ><label class="checkbox-label"
+          ><input type="checkbox" id="lead-consent" required /><span
+            >I agree to this demo storing my name, email and interest for up to
+            30 days so its operator can review this assessment. I understand
+            this is not a request sent to PlacidWay.</span
+          ></label
+        >
+        <p class="fine-print">
+          Please do not submit medical records, symptoms or other sensitive
+          health information.
+        </p>
+        <button class="button primary full" id="lead-submit" type="submit">
+          Register interest in demo
+        </button>
+        <p id="lead-result" role="status"></p>
+      </form>
+    </dialog>
+    <dialog id="privacy-dialog">
+      <div class="dialog-head">
+        <h2>Privacy & data use</h2>
+        <button class="close" data-close aria-label="Close privacy information">
+          ×
+        </button>
+      </div>
+      <div class="privacy-copy">
+        <p>
+          This is an independent technical assessment, not an official PlacidWay
+          service.
+        </p>
+        <p>
+          <strong>Chat:</strong> your question and a short conversation history
+          are sent to the selected LLM provider. History stays in tab memory; a
+          new chat clears it. Do not share medical records, personal identifiers
+          or other sensitive information.
+        </p>
+        <p>
+          <strong>Logs:</strong> this demo stores outcome, source identifiers,
+          model, token usage and latency for 30 days. For unanswered or
+          unverified questions, it also stores up to 400 characters after basic
+          email, phone, key and explicit name redaction. Redaction is imperfect;
+          avoid sensitive content. Complete conversations and API keys are not
+          stored.
+        </p>
+        <p>
+          <strong>Quote form:</strong> only name, email, selected interest and
+          consent version are stored, separately from chat logs, for up to 30
+          days. Requests are not forwarded to PlacidWay.
+        </p>
+        <p>
+          <strong>Abuse protection:</strong> a daily salted hash of your IP is
+          used for short-lived request counters. The application does not save
+          raw IP addresses. Hosting and LLM providers process requests under
+          their own policies.
+        </p>
+        <p>
+          For deletion requests, contact the operator through the
+          <a
+            href="https://github.com/davijannotti/placidway-knowledge-chatbot"
+            target="_blank"
+            rel="noopener noreferrer"
+            >project repository</a
+          >. Do not post your email or health information in public issues.
+        </p>
+      </div>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

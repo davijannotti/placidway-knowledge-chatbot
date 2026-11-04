@@ -1,0 +1,14 @@
+{
+  "name": "placidway-knowledge-api",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-04",
+  "workers_dev": true,
+  "vars": {
+    "ALLOWED_ORIGIN": "https://davijannotti.github.io,http://localhost:5173,http://127.0.0.1:5173",
+    "GROQ_MODEL": "openai/gpt-oss-120b",
+    "SHARED_DAILY_LIMIT": "40"
+  },
+  "triggers": { "crons": ["17 3 * * *"] },
+  "observability": { "enabled": false },
+  "d1_databases": [{ "binding": "DB", "database_name": "placidway-knowledge", "database_id": "c33672a8-5233-4190-b068-a0f1d7a4c830" }]
+}
