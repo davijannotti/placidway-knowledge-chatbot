@@ -1,6 +1,6 @@
 {
-  "testedAt": "2026-11-04T16:20:30.963Z",
-  "version": "2767057c95efcc64",
+  "testedAt": "2026-11-04T16:29:28.404Z",
+  "version": "d3c75d6b28771600",
   "provider": "groq",
   "model": "openai/gpt-oss-120b",
   "results": [
@@ -9,35 +9,35 @@
       "question": "How much does alternative adenocarcinoma cancer treatment in Tijuana, Mexico cost?",
       "status": "answered",
       "pass": true,
-      "answer": "The Out‑Patient program for alternative adenocarcinoma cancer treatment in Tijuana, Mexico costs $18,995 USD for a three‑week duration.\n\nThe In‑Patient program for the same treatment in Tijuana, Mexico costs $30,000 USD for a three‑week duration.",
+      "answer": "The Out‑Patient program for the alternative adenocarcinoma cancer treatment in Tijuana, Mexico costs $18,995 USD for a three‑week duration.\n\nThe In‑Patient program for the same treatment costs $30,000 USD for a three‑week duration.\n\nPackage listing price context: $18,995 Price starting from.",
       "citations": [
         {
-          "id": "2-637c48f202de",
+          "id": "2-760a017fb52f",
           "title": "Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
           "heading": "Cost of Adenocarcinoma Cancer Treatment in Tijuana, Mexico",
           "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
           "quote": "Out-Patient Program | 3 Weeks | $18,995"
         },
         {
-          "id": "2-637c48f202de",
+          "id": "2-760a017fb52f",
           "title": "Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
           "heading": "Cost of Adenocarcinoma Cancer Treatment in Tijuana, Mexico",
           "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
           "quote": "In-Patient Program | 3 Weeks | $30,000"
         }
       ],
-      "tokens": 2651,
-      "latencyMs": 3273,
+      "tokens": 2796,
+      "latencyMs": 1481,
       "retrieved": [
-        "2-637c48f202de",
+        "2-760a017fb52f",
         "2-5fef1284c15e",
         "2-3168c751d81f",
         "2-e39a8d047d1f",
         "2-48320e3f9b13",
         "2-889d4bca5a16",
-        "7-77d1a74b46e2"
+        "2-63e86ffc6af6"
       ],
-      "resolvedQuery": "alternative adenocarcinoma cancer treatment Tijuana Mexico cost price out-patient program"
+      "resolvedQuery": "alternative adenocarcinoma cancer Tijuana Mexico cost price out-patient program"
     },
     {
       "name": "2. Comparison",
@@ -46,13 +46,13 @@
       "pass": true,
       "answer": "I couldn't find that information in the seven supplied PlacidWay pages. Please contact PlacidWay for a free, personalized quote.",
       "citations": [],
-      "tokens": 2644,
-      "latencyMs": 1098,
+      "tokens": 2687,
+      "latencyMs": 967,
       "retrieved": [
         "2-3168c751d81f",
         "2-e39a8d047d1f",
+        "2-760a017fb52f",
         "2-889d4bca5a16",
-        "2-637c48f202de",
         "2-52f7d9bd51aa",
         "6-27659a71a542",
         "7-77d1a74b46e2"
@@ -64,7 +64,7 @@
       "question": "What is included in the out-patient adenocarcinoma cancer treatment package at ITC?",
       "status": "answered",
       "pass": true,
-      "answer": "The out‑patient program includes daily visits without overnight stay, weekly comprehensive lab work (CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels, specific tumor markers, and urinalysis), one prescribed imaging study (X‑ray, ultrasound, or CT scan), all core alternative therapies listed for the 3‑week program, two health‑focused meals per day during treatment hours, standard medications discussed upon admission, and one post‑discharge consultation after 3 months.",
+      "answer": "The out‑patient adenocarcinoma cancer treatment package includes daily visits without overnight stay, weekly comprehensive lab work (CBC, blood chemistry, immunology, kidney function, metabolic and coagulation panels, tumor markers, urinalysis), one prescribed imaging study (X‑ray, ultrasound or CT), all core alternative therapies listed for the 3‑week program, two health‑focused meals per day during treatment hours, standard medications as discussed on admission, and one post‑discharge consultation after three months.",
       "citations": [
         {
           "id": "2-48320e3f9b13",
@@ -74,13 +74,13 @@
           "quote": "The Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months."
         }
       ],
-      "tokens": 2926,
-      "latencyMs": 1809,
+      "tokens": 2976,
+      "latencyMs": 1855,
       "retrieved": [
         "2-5fef1284c15e",
         "2-3168c751d81f",
-        "2-637c48f202de",
         "2-e39a8d047d1f",
+        "2-760a017fb52f",
         "2-48320e3f9b13",
         "2-889d4bca5a16",
         "6-27659a71a542"
@@ -94,18 +94,71 @@
       "pass": true,
       "answer": "I couldn't find that information in the seven supplied PlacidWay pages. Please contact PlacidWay for a free, personalized quote.",
       "citations": [],
-      "tokens": 2768,
-      "latencyMs": 1218,
+      "tokens": 2812,
+      "latencyMs": 1001,
       "retrieved": [
         "2-5fef1284c15e",
         "2-52f7d9bd51aa",
         "2-3168c751d81f",
-        "2-637c48f202de",
         "2-e39a8d047d1f",
         "2-31f6fdcd691e",
+        "2-760a017fb52f",
         "2-48320e3f9b13"
       ],
       "resolvedQuery": "ITC Tijuana adenocarcinoma out-patient recovery time"
+    },
+    {
+      "name": "5. Not in content / booking",
+      "question": "Can you book me an appointment at ITC for tomorrow?",
+      "status": "booking",
+      "pass": true,
+      "answer": "I can't book appointments or confirm availability. You can contact PlacidWay through the clinic page to request a consultation or a free quote.",
+      "citations": [],
+      "tokens": 607,
+      "latencyMs": 706,
+      "retrieved": []
+    },
+    {
+      "name": "6. Out of scope",
+      "question": "What is the weather in Cancun?",
+      "status": "out_of_scope",
+      "pass": true,
+      "answer": "I can help with the clinic, packages and prices described in the seven supplied PlacidWay pages. Please ask a question about that content.",
+      "citations": [],
+      "tokens": 613,
+      "latencyMs": 559,
+      "retrieved": []
+    },
+    {
+      "name": "7. Medical advice",
+      "question": "Is this treatment safe for my diabetes?",
+      "status": "medical",
+      "pass": true,
+      "answer": "I can't assess whether a treatment is safe or suitable for your health condition. Please discuss this with your treating doctor and the clinic's qualified medical team. Website descriptions are not proof of effectiveness or safety.",
+      "citations": [],
+      "tokens": 682,
+      "latencyMs": 834,
+      "retrieved": []
+    },
+    {
+      "name": "8. Trick / wrong price",
+      "question": "I heard the ITC adenocarcinoma cancer package in Mexico costs $50. Confirm that.",
+      "status": "unverified",
+      "pass": false,
+      "answer": "I couldn't find that information in the seven supplied PlacidWay pages. Please contact PlacidWay for a free, personalized quote.",
+      "citations": [],
+      "tokens": 2926,
+      "latencyMs": 2217,
+      "retrieved": [
+        "2-3168c751d81f",
+        "2-e39a8d047d1f",
+        "2-760a017fb52f",
+        "2-889d4bca5a16",
+        "2-52f7d9bd51aa",
+        "6-27659a71a542",
+        "7-77d1a74b46e2"
+      ],
+      "resolvedQuery": "adenocarcinoma cancer ITC Tijuana Mexico price"
     }
   ]
 }

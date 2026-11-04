@@ -118,6 +118,17 @@ test("answer requires exact evidence from selected chunks and rejects unsupporte
       validateAnswer(
         {
           ...answer,
+          claims: [{ ...answer.claims[0], text: "السعر ٥٠ دولار" }],
+        },
+        [source],
+      ),
+    /unsupported_number/,
+  );
+  assert.throws(
+    () =>
+      validateAnswer(
+        {
+          ...answer,
           claims: [
             { ...answer.claims[0], quote: "The package is free and safe." },
           ],
@@ -141,6 +152,49 @@ test("answer requires exact evidence from selected chunks and rejects unsupporte
   assert.throws(
     () => validateAnswer({ status: "answered", claims: [] }, [source]),
     /missing_evidence/,
+  );
+  assert.throws(
+    () =>
+      validateAnswer(
+        {
+          ...answer,
+          claims: [{ ...answer.claims[0], text: "The price is EUR 18,995." }],
+        },
+        [source],
+      ),
+    /unsupported_currency/,
+  );
+  const excerptSource = {
+    ...source,
+    text: "Out-Patient program costs USD 18,995. Extra explanatory material. The duration is 3 weeks.",
+  };
+  const excerpts = {
+    ...answer,
+    claims: [
+      {
+        ...answer.claims[0],
+        quote:
+          "Out-Patient program costs USD 18,995. ... The duration is 3 weeks.",
+      },
+    ],
+  };
+  assert.equal(validateAnswer(excerpts, [excerptSource]).status, "answered");
+  assert.throws(
+    () =>
+      validateAnswer(
+        {
+          ...excerpts,
+          claims: [
+            {
+              ...excerpts.claims[0],
+              quote:
+                "The duration is 3 weeks. ... Out-Patient program costs USD 18,995.",
+            },
+          ],
+        },
+        [excerptSource],
+      ),
+    /unsupported_quote/,
   );
 });
 
@@ -288,6 +342,7 @@ test("unsupported generated prices fail closed", async () => {
 
 test("provider errors never expose bodies or keys and have no unbounded retries", async () => {
   for (const [status, expected] of [
+    [302, "provider_error"],
     [401, "invalid_api_key"],
     [429, "provider_rate_limit"],
     [500, "provider_error"],

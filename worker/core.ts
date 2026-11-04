@@ -128,9 +128,16 @@ export function redactQuestion(text: string) {
 }
 
 const numbers = (s: string) =>
-  (s.match(/\d[\d,.]*/g) ?? []).map((n) =>
-    n.replace(/[,.]$/g, "").replace(/,/g, ""),
-  );
+  (
+    s
+      .replace(/[٠-٩۰-۹]/g, (digit) => {
+        const arabic = "٠١٢٣٤٥٦٧٨٩".indexOf(digit);
+        return String(arabic < 0 ? "۰۱۲۳۴۵۶۷۸۹".indexOf(digit) : arabic);
+      })
+      .replace(/٬/g, ",")
+      .replace(/٫/g, ".")
+      .match(/\d[\d,.]*/g) ?? []
+  ).map((n) => n.replace(/[,.]$/g, "").replace(/,/g, ""));
 export function validateAnswer(value: unknown, selected: Chunk[]) {
   const obj = value as {
     status?: string;
@@ -170,11 +177,32 @@ export function validateAnswer(value: unknown, selected: Chunk[]) {
     // The exact heading is displayed separately; allow it as a redundant quote prefix.
     if (quote.startsWith(source.heading))
       quote = quote.slice(source.heading.length).trim();
-    if (quote.length < 15 || !flatten(source.text).includes(flatten(quote)))
+    const passages = quote.split(/\s*(?:\.{3}|…)\s*/).filter(Boolean);
+    let cursor = 0;
+    const sourceText = flatten(source.text);
+    if (!passages.length || passages.length > 3)
       throw new Error("unsupported_quote");
+    for (const passage of passages) {
+      const part = flatten(passage);
+      const position = sourceText.indexOf(part, cursor);
+      if (part.length < 15 || position < 0)
+        throw new Error("unsupported_quote");
+      cursor = position + part.length;
+    }
     const evidenceNumbers = numbers(source.heading + " " + quote);
     if (numbers(claim.text).some((n) => !evidenceNumbers.includes(n)))
       throw new Error("unsupported_number");
+    const currencies =
+      claim.text.match(/\b(?:USD|EUR|MXN|GBP|TRY|INR|THB)\b/g) ?? [];
+    if (
+      currencies.some(
+        (currency) =>
+          !new RegExp(`\\b${currency}\\b`).test(
+            source.heading + " " + source.text,
+          ),
+      )
+    )
+      throw new Error("unsupported_currency");
     citations.push({
       id: source.id,
       title: source.title,
