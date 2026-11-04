@@ -11,5 +11,6 @@
     "Real Groq-backed unknown answer and quote handoff"
   ],
   "gapRequestId": "768e3d37-fd40-4092-ae6f-2cca704a86e4",
-  "syntheticLeadId": "f3c34bce-8640-4373-a0d7-a22ef63db99f"
+  "syntheticLeadId": "f3c34bce-8640-4373-a0d7-a22ef63db99f",
+  "syntheticLeadCleanup": "Synthetic smoke@example.invalid lead records removed after verification; operational events retained."
 }

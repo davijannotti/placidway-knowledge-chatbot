@@ -11,11 +11,30 @@ import {
 } from "../worker/core.ts";
 import type { Chunk } from "../worker/core.ts";
 import { complete, ProviderError, respond } from "../worker/model.ts";
+import { validSnapshot } from "../worker/knowledge.ts";
 
 const knowledge = JSON.parse(
   readFileSync(new URL("../knowledge.json", import.meta.url), "utf8"),
 );
 const chunks: Chunk[] = knowledge.chunks;
+test("refreshed snapshots require all seven trusted URLs and unique valid chunks", () => {
+  assert.equal(validSnapshot(knowledge), true);
+  assert.equal(validSnapshot(null), false);
+  for (const change of [
+    { version: "invalid" },
+    { chunks: [] },
+    { sources: [null, ...knowledge.sources.slice(1)] },
+    {
+      chunks: [
+        { ...chunks[0], url: "https://untrusted.invalid" },
+        ...chunks.slice(1),
+      ],
+    },
+    { chunks: [chunks[0], chunks[0], ...chunks.slice(2)] },
+    { chunks: chunks.filter((c) => c.sourceId !== "5") },
+  ])
+    assert.equal(validSnapshot({ ...knowledge, ...change }), false);
+});
 const lead = {
   id: "5e1aa555-fdee-4a56-a1c6-283102045b65",
   name: "Test Visitor",
@@ -245,6 +264,7 @@ test("gap logs redact keys, emails, phone numbers and explicit names", () => {
 const scripted = (results: unknown[]) => {
   const requests: Record<string, any>[] = [];
   const fetcher = (async (_url: unknown, init: RequestInit) => {
+    assert.equal(init.redirect, "manual");
     requests.push(JSON.parse(String(init.body)));
     return new Response(
       JSON.stringify({

@@ -1,4 +1,4 @@
-import bundled from "../knowledge.json";
+import bundled from "../knowledge.json" with { type: "json" };
 
 const snapshotUrl =
   "https://raw.githubusercontent.com/davijannotti/placidway-knowledge-chatbot/main/knowledge.json";
@@ -21,7 +21,8 @@ export function validSnapshot(value: unknown): value is typeof bundled {
   if (
     !bundled.sources.every((s) =>
       data.sources.some(
-        (d) => d.id === s.id && d.url === s.url && typeof d.title === "string",
+        (d) =>
+          d && d.id === s.id && d.url === s.url && typeof d.title === "string",
       ),
     )
   )

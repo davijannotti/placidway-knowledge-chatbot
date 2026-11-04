@@ -1,6 +1,6 @@
 # Live assessment evaluation
 
-Actual Groq responses; model openai/gpt-oss-120b; base d3c75d6b28771600; tested 2026-11-04T16:29:28.404Z. These semantic checks supplement manual review; they do not prove universal correctness.
+Actual Groq responses; model openai/gpt-oss-120b; base d0029a4567abf8b0; tested 2026-11-04T16:36:41.451Z. These semantic checks supplement manual review; they do not prove universal correctness.
 
 ## 1. Cost
 
@@ -8,11 +8,11 @@ Actual Groq responses; model openai/gpt-oss-120b; base d3c75d6b28771600; tested 
 
 **Result:** PASS (answered)
 
-The Out‑Patient program for the alternative adenocarcinoma cancer treatment in Tijuana, Mexico costs $18,995 USD for a three‑week duration.
+The Out‑Patient program for alternative adenocarcinoma cancer treatment in Tijuana, Mexico costs $18,995 USD for a three‑week duration.
 
 The In‑Patient program for the same treatment costs $30,000 USD for a three‑week duration.
 
-Package listing price context: $18,995 Price starting from.
+Package listing price context: $18,995 Price starting from (USD).
 
 [Cost of Adenocarcinoma Cancer Treatment in Tijuana, Mexico](https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC)
 
@@ -37,7 +37,7 @@ I couldn't find that information in the seven supplied PlacidWay pages. Please c
 
 **Result:** PASS (answered)
 
-The out‑patient adenocarcinoma cancer treatment package includes daily visits without overnight stay, weekly comprehensive lab work (CBC, blood chemistry, immunology, kidney function, metabolic and coagulation panels, tumor markers, urinalysis), one prescribed imaging study (X‑ray, ultrasound or CT), all core alternative therapies listed for the 3‑week program, two health‑focused meals per day during treatment hours, standard medications as discussed on admission, and one post‑discharge consultation after three months.
+The out‑patient adenocarcinoma cancer treatment package at ITC includes daily visits for therapies without overnight stay, weekly comprehensive lab work (CBC, blood chemistry, immunology, kidney function, metabolic and coagulation panels, specific tumor markers, and urinalysis), one prescribed imaging study (X‑ray, ultrasound, or CT scan), all core alternative therapies listed for the 3‑week program, two health‑focused meals per day during treatment hours, standard medications as discussed on admission, and one follow‑up consultation with an ITC doctor three months after discharge.
 
 [Included in the Out-Patient Program ($18,995 USD)](https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC)
 
@@ -89,7 +89,18 @@ I can't assess whether a treatment is safe or suitable for your health condition
 
 **Question:** I heard the ITC adenocarcinoma cancer package in Mexico costs $50. Confirm that.
 
-**Result:** FAIL (unverified)
+**Result:** PASS (answered)
 
-I couldn't find that information in the seven supplied PlacidWay pages. Please contact PlacidWay for a free, personalized quote.
+The ITC adenocarcinoma cancer package in Tijuana, Mexico costs $18,995 USD for the Out‑Patient program over a three‑week period.
 
+The In‑Patient version of the same package costs $30,000 USD for a three‑week stay.
+
+Package listing price context: $18,995 Price starting from (USD).
+
+[Cost of Adenocarcinoma Cancer Treatment in Tijuana, Mexico](https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC)
+
+> Out-Patient Program | 3 Weeks | $18,995
+
+[Cost of Adenocarcinoma Cancer Treatment in Tijuana, Mexico](https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC)
+
+> In-Patient Program | 3 Weeks | $30,000
